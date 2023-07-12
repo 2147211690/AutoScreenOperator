@@ -37,46 +37,51 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(0, 5);
+            label1.Location = new Point(0, 7);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(72, 15);
+            label1.Size = new Size(84, 20);
             label1.TabIndex = 0;
             label1.Text = "指针移动到";
             // 
             // timeTextBox
             // 
-            timeTextBox.Location = new Point(223, 2);
+            timeTextBox.Location = new Point(287, 3);
+            timeTextBox.Margin = new Padding(4, 4, 4, 4);
             timeTextBox.Name = "timeTextBox";
-            timeTextBox.Size = new Size(100, 23);
+            timeTextBox.Size = new Size(127, 27);
             timeTextBox.TabIndex = 2;
-            timeTextBox.Text = "1";
+            timeTextBox.Text = "0";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(184, 5);
+            label2.Location = new Point(237, 7);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(33, 15);
+            label2.Size = new Size(39, 20);
             label2.TabIndex = 3;
             label2.Text = "时间";
             // 
             // aimPosTextBox
             // 
-            aimPosTextBox.Location = new Point(78, 2);
+            aimPosTextBox.Location = new Point(100, 3);
+            aimPosTextBox.Margin = new Padding(5, 5, 5, 5);
             aimPosTextBox.Name = "aimPosTextBox";
-            aimPosTextBox.Size = new Size(99, 23);
+            aimPosTextBox.Size = new Size(127, 31);
             aimPosTextBox.TabIndex = 4;
             // 
             // MoveToCPanel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(aimPosTextBox);
             Controls.Add(label2);
             Controls.Add(timeTextBox);
             Controls.Add(label1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "MoveToCPanel";
-            Size = new Size(600, 26);
+            Size = new Size(771, 35);
             Leave += MoveToCPanel_Leave;
             ResumeLayout(false);
             PerformLayout();

@@ -13,7 +13,7 @@ namespace AutoScreenOperator
 {
     public partial class SleepCPanel : CommandPanel
     {
-        public SleepCPanel(SleepCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); }
+        public SleepCPanel(SleepCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); SetCommandValue(); }
         public override Command command => _command;
         private SleepCommand _command;
         public override void SetCommandValue()

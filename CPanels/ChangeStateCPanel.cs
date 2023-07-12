@@ -19,6 +19,7 @@ namespace AutoScreenOperator.CPanels
             SummonCommandEidt();
             CPanelResource.SetMButtonComboBox(mouseButtonComboBox);
             CPanelResource.SetMStateComboBox(mouseStateComboBox);
+            SetCommandValue();
         }
         public override Command command => _command;
         private ChangeStateCommand _command;
@@ -26,6 +27,11 @@ namespace AutoScreenOperator.CPanels
         {
             _command.mButton = (MButtons)mouseButtonComboBox.SelectedIndex;
             _command.mState = (MState)mouseStateComboBox.SelectedIndex;
+        }
+
+        private void ChangeStateCPanel_Leave(object sender, EventArgs e)
+        {
+            SetCommandValue();
         }
     }
 }

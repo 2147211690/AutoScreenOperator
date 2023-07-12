@@ -37,47 +37,53 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(0, 4);
+            label1.Location = new Point(0, 5);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(59, 15);
+            label1.Size = new Size(69, 20);
             label1.TabIndex = 0;
             label1.Text = "改变按键";
             // 
             // mouseButtonComboBox
             // 
             mouseButtonComboBox.FormattingEnabled = true;
-            mouseButtonComboBox.Location = new Point(68, 1);
+            mouseButtonComboBox.Location = new Point(87, 1);
+            mouseButtonComboBox.Margin = new Padding(4, 4, 4, 4);
             mouseButtonComboBox.Name = "mouseButtonComboBox";
-            mouseButtonComboBox.Size = new Size(121, 23);
+            mouseButtonComboBox.Size = new Size(154, 28);
             mouseButtonComboBox.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(195, 4);
+            label2.Location = new Point(251, 5);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(59, 15);
+            label2.Size = new Size(69, 20);
             label2.TabIndex = 2;
             label2.Text = "的状态为";
             // 
             // mouseStateComboBox
             // 
             mouseStateComboBox.FormattingEnabled = true;
-            mouseStateComboBox.Location = new Point(260, 1);
+            mouseStateComboBox.Location = new Point(334, 1);
+            mouseStateComboBox.Margin = new Padding(4, 4, 4, 4);
             mouseStateComboBox.Name = "mouseStateComboBox";
-            mouseStateComboBox.Size = new Size(121, 23);
+            mouseStateComboBox.Size = new Size(154, 28);
             mouseStateComboBox.TabIndex = 3;
             // 
             // ChangeStateCPanel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(mouseStateComboBox);
             Controls.Add(label2);
             Controls.Add(mouseButtonComboBox);
             Controls.Add(label1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "ChangeStateCPanel";
-            Size = new Size(600, 26);
+            Size = new Size(771, 35);
+            Leave += ChangeStateCPanel_Leave;
             ResumeLayout(false);
             PerformLayout();
         }

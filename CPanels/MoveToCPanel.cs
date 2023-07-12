@@ -14,7 +14,7 @@ namespace AutoScreenOperator
 {
     public partial class MoveToCPanel : CommandPanel
     {
-        public MoveToCPanel(MoveToCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); }
+        public MoveToCPanel(MoveToCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); SetCommandValue(); }
         public override Command command { get => _command; }
         private MoveToCommand _command;
 

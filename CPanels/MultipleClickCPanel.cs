@@ -19,6 +19,7 @@ namespace AutoScreenOperator
             _command = c;
             SummonCommandEidt();
             CPanelResource.SetMButtonComboBox(mouseButtonComboBox);
+            SetCommandValue();
         }
         public override Command command => _command;
         private MultipleClickCommand _command;

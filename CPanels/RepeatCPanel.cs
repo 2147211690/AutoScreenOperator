@@ -13,7 +13,7 @@ namespace AutoScreenOperator
 {
     public partial class RepeatCPanel : CommandPanel
     {
-        public RepeatCPanel(RepeatCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); }
+        public RepeatCPanel(RepeatCommand c) { InitializeComponent(); _command = c; SummonCommandEidt(); SetCommandValue(); }
         public override Command command => _command;
         private RepeatCommand _command;
 
@@ -22,7 +22,7 @@ namespace AutoScreenOperator
 
         public override void SetCommandValue()
         {
-            
+
             _command.repeatCount = int.Parse(countTextBox.Text);
         }
         public override void Review()

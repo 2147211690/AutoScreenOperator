@@ -17,12 +17,12 @@ namespace AutoScreenOperator
     internal class WindowMouseOperator : IMouseOperator
     {
         private WindowInputImp imp = new();
-        public Vector2 mousePos { get =>_mousePos; set { _mousePos = value; MoveTo(_mousePos); } }
-        private Vector2 _mousePos = new Vector2(0,0);
-        
+        public Vector2 mousePos { get => _mousePos; set { _mousePos = value; MoveTo(_mousePos); } }
+        private Vector2 _mousePos = new Vector2(0, 0);
+
         public void Click(MButtons button = MButtons.Left)
         {
-            Input[] inputs = { GetMouseInput(0, 0, 0, GetMouseEvent(button)), GetMouseInput(0, 0, 0, GetMouseEvent(button,1)) };
+            Input[] inputs = { GetMouseInput(0, 0, 0, GetMouseEvent(button)), GetMouseInput(0, 0, 0, GetMouseEvent(button, 1)) };
             imp.Send(2, inputs, Marshal.SizeOf(typeof(Input)));
         }
         public void MoveTo(Vector2 pos)
@@ -34,7 +34,7 @@ namespace AutoScreenOperator
         }
         public void ChangeButton(MButtons button, MState i)
         {
-            int s = (int)i-1;
+            int s = ((int)i) - 1;
             if (s < 0) return;
             Input[] inputs = { GetMouseInput(0, 0, 0, GetMouseEvent(button, s)) };
             imp.Send(1, inputs, Marshal.SizeOf(typeof(Input)));
@@ -69,12 +69,13 @@ namespace AutoScreenOperator
         }
     }
 }
-namespace WindowImp { 
+namespace WindowImp
+{
     internal class WindowInputImp
     {
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
-        public uint Send(uint nInputs, Input[] pInputs, int cbSize) => SendInput(nInputs,pInputs,cbSize);
+        public uint Send(uint nInputs, Input[] pInputs, int cbSize) => SendInput(nInputs, pInputs, cbSize);
         [DllImport("user32.dll")]
         private static extern IntPtr GetMessageExtraInfo();
         public IntPtr GetMessage() => GetMessageExtraInfo();
@@ -99,8 +100,8 @@ namespace WindowImp {
                 {
                     mi = new MouseInput
                     {
-                        dx = 1000,
-                        dy = 1000,
+                        dx = 10000,
+                        dy = 10000,
                         mouseData = 0,
                         dwFlags = MouseEventF.Absolute | MouseEventF.Move,
                         time = 0,
@@ -111,8 +112,8 @@ namespace WindowImp {
             Input[] inputs = { i };
             Send(1, inputs, Marshal.SizeOf(typeof(Input)));
             Point mP = Form.MousePosition;
-            xPC = 1000 / mP.X;
-            yPC = 1000 / mP.Y;
+            xPC = 10000 / mP.X;
+            yPC = 10000 / mP.Y;
             i.u.mi.dx = 0;
             i.u.mi.dy = 0;
             inputs[0] = i;
